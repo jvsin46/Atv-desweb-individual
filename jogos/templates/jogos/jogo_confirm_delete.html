@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Jogo</title>
+</head>
+<body>
+    <h1>Tem certeza de que deseja excluir este jogo?</h1>
+    <p>{{ object.nome }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Excluir</button>
+    </form>
+    <a href="{% url 'jogo-list' %}">Cancelar</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categorias</title>
+</head>
+<body>
+    <h1>Lista de Categorias</h1>
+    <a href="{% url 'categoria-create' %}">Nova Categoria</a>
+    <ul>
+        {% for categoria in object_list %}
+            <li>
+                {{ categoria.nome }}
+                <a href="{% url 'categoria-update' categoria.pk %}">Editar</a>
+                <a href="{% url 'categoria-delete' categoria.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</body>
+</html>

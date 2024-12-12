@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogos</title>
+</head>
+<body>
+    <h1>Lista de Jogos</h1>
+    <a href="{% url 'jogo-create' %}">Novo Jogo</a>
+    <ul>
+        {% for jogo in object_list %}
+            <li>
+                {{ jogo.nome }} (Categoria: {{ jogo.categoria.nome }})
+                <a href="{% url 'jogo-update' jogo.pk %}">Editar</a>
+                <a href="{% url 'jogo-delete' jogo.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</body>
+</html>
